@@ -77,7 +77,12 @@ export function UploadPage() {
           ></Image>
         </AspectRatio>
 
-        <Text>For best results, use 4/3 aspect ratio images.</Text>
+        <Text ta="center">
+          For best results, use 4:3 aspect ratio images.
+          <br />
+          That is the standard on most phone cameras when you take pictures in
+          landscape mode.
+        </Text>
         <Group justify="center">
           <FileButton onChange={setCatPicture} accept="image/png,image/jpeg">
             {(props) => (
@@ -103,7 +108,14 @@ export function UploadPage() {
         </Group>
 
         {isUploading && (
-          <Progress w={400} radius="xs" size="xl" value={50} striped animated />
+          <Progress
+            w={400}
+            radius="xs"
+            size="xl"
+            value={100}
+            striped
+            animated
+          />
         )}
 
         {error && (
