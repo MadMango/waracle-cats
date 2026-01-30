@@ -12,12 +12,15 @@
     "stylelint": "stylelint '**/*.css' --cache",
     "vitest": "vitest run",
     "vitest:watch": "vitest",
-    "test": "npm run typecheck && npm run lint && npm run vitest && npm run build"
+    "test": "npm run typecheck && npm run lint && npm run vitest && npm run build",
+    "postinstall": "./populate_env.sh"
   },
   "dependencies": {
     "@mantine/core": "8.3.13",
     "@mantine/hooks": "8.3.13",
     "@tabler/icons-react": "^3.36.1",
+    "@tanstack/react-query": "^5.90.20",
+    "@tanstack/react-query-devtools": "^5.91.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.4",
     "react-router": "^7.13.0"

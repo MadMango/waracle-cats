@@ -1,12 +1,10 @@
-# Mantine Vite template
+## setup
 
-## Features
+* `npm i`
+* Replace `<my_api_key>` in `.env.local` with your API key for cats API.
+  * If you are on Windows and not using WSL, the script to create .env.local will fail, and you will need to create the file yourself, it needs to contain the following line: VITE_CAT_API_KEY=<your key goes here>
 
-This template comes with the following features:
-
-- [PostCSS](https://postcss.org/) with [mantine-postcss-preset](https://mantine.dev/styles/postcss-preset)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Vitest](https://vitest.dev/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+##
 
 ## npm scripts
 

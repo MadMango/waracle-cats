@@ -1,0 +1,7 @@
+img {
+  border-radius: 8px;
+  background: linear-gradient(75deg, #485157 0%, #A9DBC0 50%, #FFF 100%);
+
+  /* fixes alt text flashing on firefox during image load */
+  color: transparent;
+}

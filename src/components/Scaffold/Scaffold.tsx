@@ -40,6 +40,7 @@ export default function Scaffold({ children }: { children: ReactNode }) {
   const [opened, { toggle }] = useDisclosure();
   const navigate = useNavigate();
   const location = useLocation();
+
   return (
     <AppShell
       header={{ height: 60, offset: true }}
@@ -48,7 +49,7 @@ export default function Scaffold({ children }: { children: ReactNode }) {
       padding="md"
     >
       <AppShell.Header>
-        <Group h="100%" px="md" justify="space-between">
+        <Group justify="space-between" wrap="nowrap" h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <Text>
             Welcome to{" "}
@@ -61,10 +62,15 @@ export default function Scaffold({ children }: { children: ReactNode }) {
               The Cat App
             </Text>
           </Text>
-          <ColorSchemeToggle />
+          <Flex visibleFrom="sm">
+            <ColorSchemeToggle />
+          </Flex>
         </Group>
       </AppShell.Header>
       <AppShell.Navbar>
+        <Flex justify="flex-end" p={8} hiddenFrom="sm">
+          <ColorSchemeToggle />
+        </Flex>
         {links.map(({ destination, name, icon }) => {
           return (
             <NavLink

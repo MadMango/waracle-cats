@@ -3,20 +3,16 @@ import {
   SegmentedControl,
   useMantineColorScheme,
 } from "@mantine/core";
-import { useEffect, useState } from "react";
 
 export function ColorSchemeToggle() {
-  const { setColorScheme } = useMantineColorScheme();
-  const [colourScheme, setColourScheme] = useState("auto");
-
-  useEffect(() => {
-    setColorScheme(colourScheme as MantineColorScheme);
-  }, [colourScheme, setColorScheme]);
+  const { colorScheme, setColorScheme } = useMantineColorScheme();
 
   return (
     <SegmentedControl
-      value={colourScheme}
-      onChange={setColourScheme}
+      value={colorScheme}
+      onChange={(value) => {
+        setColorScheme(value as MantineColorScheme);
+      }}
       data={[
         { label: "Light", value: "light" },
         { label: "Dark", value: "dark" },
