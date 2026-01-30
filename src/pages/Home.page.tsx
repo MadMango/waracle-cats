@@ -75,9 +75,36 @@ export function HomePage() {
     },
   });
 
+  const optimisticUpdate = async (catId: string, upOrDown: -1 | 1) => {
+    // Cancel any outgoing refetches
+    // (so they don't overwrite our optimistic update)
+    await queryClient.cancelQueries({ queryKey: ["votes"] });
+
+    // Snapshot the previous value
+    const previousVotes = queryClient.getQueryData<Record<string, number>>([
+      "votes",
+    ]);
+
+    // Optimistically increment the vote count
+    queryClient.setQueryData<Record<string, number>>(["votes"], (old) => {
+      if (!old) return { [catId]: upOrDown };
+
+      return {
+        ...old,
+        [catId]: (old[catId] || 0) + upOrDown,
+      };
+    });
+
+    // Return a result with the snapshotted value
+    return { previousVotes };
+  };
+
   const upVote = useMutation({
     mutationFn: async (catId: string) => {
       await upVoteCat(catId);
+    },
+    onMutate: async (catId: string) => {
+      optimisticUpdate(catId, 1);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["votes"] });
@@ -87,6 +114,9 @@ export function HomePage() {
   const downVote = useMutation({
     mutationFn: async (catId: string) => {
       await downVoteCat(catId);
+    },
+    onMutate: async (catId: string) => {
+      optimisticUpdate(catId, -1);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["votes"] });
