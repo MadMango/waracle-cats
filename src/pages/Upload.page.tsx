@@ -10,12 +10,14 @@ import {
 } from "@mantine/core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import Scaffold from "@/components/Scaffold/Scaffold";
 import { postCat } from "@/services/cats";
 
 export function UploadPage() {
   const [isUploading, setUploading] = useState(false);
   const [error, setError] = useState<string | null>();
+  const navigate = useNavigate();
 
   const queryClient = useQueryClient();
 
@@ -26,6 +28,7 @@ export function UploadPage() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["cats"] });
+      navigate("/");
     },
     onError(error) {
       setError(error.toString());
@@ -74,6 +77,7 @@ export function UploadPage() {
           ></Image>
         </AspectRatio>
 
+        <Text>For best results, use 4/3 aspect ratio images.</Text>
         <Group justify="center">
           <FileButton onChange={setCatPicture} accept="image/png,image/jpeg">
             {(props) => (
