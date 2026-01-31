@@ -4,7 +4,7 @@
     "indentStyle": "space"
   },
   "files": {
-    "includes": ["**", "!**/*.css"]
+    "includes": ["**", "!**/*.css", "!!**/dist"]
   },
   "assist": {
     "actions": {

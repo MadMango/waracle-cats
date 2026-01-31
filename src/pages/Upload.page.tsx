@@ -62,8 +62,12 @@ export function UploadPage() {
   };
 
   const uploadFile = () => {
-    setCatPicture(null);
-    catsMutation.mutate(catPicture!);
+    if (catPicture) {
+      setCatPicture(null);
+      catsMutation.mutate(catPicture);
+    } else {
+      setError("There is no picture to upload.");
+    }
   };
 
   return (
