@@ -171,7 +171,7 @@ export function HomePage() {
             }
 
             return (
-              <Grid.Col key={id} span={{ base: 12, md: 6, lg: 3 }}>
+              <Grid.Col key={id} span={{ base: 12, md: 6, xl: 3 }}>
                 <Card shadow="sm" padding="lg" radius="md" withBorder>
                   <Card.Section>
                     <AspectRatio ratio={4 / 3} mx="auto">
