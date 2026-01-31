@@ -16,7 +16,7 @@ const getCats = async () => {
   myHeaders.append("x-api-key", VITE_CAT_API_KEY);
 
   const response = await fetch(
-    "https://api.thecatapi.com/v1/images/?limit=10",
+    "https://api.thecatapi.com/v1/images/?limit=100",
     {
       headers: myHeaders,
     },
