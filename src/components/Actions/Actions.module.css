@@ -1,0 +1,14 @@
+.vote-button {
+  background: transparent;
+
+  &:hover {
+    background: #ffffff2b;
+  }
+}
+
+.cat-score {
+  p {
+    font-size: .9em;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}

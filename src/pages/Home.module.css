@@ -5,27 +5,3 @@ img {
   /* fixes alt text flashing on firefox during image load */
   color: transparent;
 }
-
-.favourite-button {
-  background-color: rgb(255, 255, 255, 0.8);
-
-  &:focus {
-    background-color: white;
-  }
-}
-
-.vote-button {
-  background: transparent;
-
-  &:hover {
-    background: #ffffff2b;
-  }
-}
-
-
-.cat-score {
-  p {
-    font-size: .9em;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-}

@@ -1,39 +1,17 @@
 import {
-  ActionIcon,
-  Anchor,
   AspectRatio,
   Box,
   Card,
-  Center,
   Grid,
-  Group,
   Image,
   LoadingOverlay,
   Overlay,
-  Paper,
-  Space,
-  Text,
 } from "@mantine/core";
-import {
-  IconArrowDown,
-  IconArrowUp,
-  IconHeart,
-  IconHeartFilled,
-  IconTrash,
-} from "@tabler/icons-react";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useNavigate } from "react-router";
+import Actions from "@/components/Actions/Actions";
+import FavouriteIcon from "@/components/FavouriteIcon/FavouriteIcon";
+import NoCats from "@/components/NoCats/NoCats";
 import Scaffold from "@/components/Scaffold/Scaffold";
-import {
-  deleteCat,
-  downVoteCat,
-  favouriteCat,
-  unFavouriteCat,
-  upVoteCat,
-  useCats,
-  useVotes,
-} from "@/services/cats";
-import classes from "./Home.module.css";
+import { useCats } from "@/services/cats";
 
 type CatObject = {
   id: string;
@@ -43,85 +21,6 @@ type CatObject = {
 
 export function HomePage() {
   const cats = useCats();
-  const votes = useVotes();
-
-  const navigate = useNavigate();
-  const queryClient = useQueryClient();
-
-  const catDelete = useMutation({
-    mutationFn: async (catId: string) => {
-      await deleteCat(catId);
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["cats"] });
-    },
-  });
-
-  const catFavourite = useMutation({
-    mutationFn: async (catId: string) => {
-      await favouriteCat(catId);
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["cats"] });
-    },
-  });
-
-  const catUnFavourite = useMutation({
-    mutationFn: async (favouriteId: number) => {
-      await unFavouriteCat(favouriteId);
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["cats"] });
-    },
-  });
-
-  const optimisticUpdate = async (catId: string, upOrDown: -1 | 1) => {
-    // Cancel any outgoing refetches
-    // (so they don't overwrite our optimistic update)
-    await queryClient.cancelQueries({ queryKey: ["votes"] });
-
-    // Snapshot the previous value
-    const previousVotes = queryClient.getQueryData<Record<string, number>>([
-      "votes",
-    ]);
-
-    // Optimistically increment the vote count
-    queryClient.setQueryData<Record<string, number>>(["votes"], (old) => {
-      if (!old) return { [catId]: upOrDown };
-
-      return {
-        ...old,
-        [catId]: (old[catId] || 0) + upOrDown,
-      };
-    });
-
-    // Return a result with the snapshotted value
-    return { previousVotes };
-  };
-
-  const upVote = useMutation({
-    mutationFn: async (catId: string) => {
-      await upVoteCat(catId);
-    },
-    onMutate: async (catId: string) => {
-      optimisticUpdate(catId, 1);
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["votes"] });
-    },
-  });
-
-  const downVote = useMutation({
-    mutationFn: async (catId: string) => {
-      await downVoteCat(catId);
-    },
-    onMutate: async (catId: string) => {
-      optimisticUpdate(catId, -1);
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["votes"] });
-    },
-  });
 
   return (
     <Scaffold>
@@ -131,45 +30,9 @@ export function HomePage() {
           zIndex={1000}
           overlayProps={{ radius: "sm", blur: 2 }}
         />
-        {(cats.data?.length || 0) === 0 && (
-          <Center>
-            <Paper w={400} shadow="xs" p="xl">
-              <Text ta="center">There are no kitties here just yet.</Text>
-              <Space h="md"></Space>
-              <Text ta="center">
-                <Anchor
-                  ta="center"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate("/upload");
-                  }}
-                >
-                  Upload one?
-                </Anchor>
-              </Text>
-            </Paper>
-          </Center>
-        )}
+        {(cats.data?.length || 0) === 0 && <NoCats />}
         <Grid>
           {cats.data?.map(({ id, url, favourite }: CatObject) => {
-            const isCatFavourite = favourite;
-            const favouriteIcon = isCatFavourite ? (
-              <IconHeartFilled />
-            ) : (
-              <IconHeart />
-            );
-
-            const votesForThisCat = votes.data?.[id];
-            const voteCount = votesForThisCat ? Math.abs(votesForThisCat) : 0;
-            const voteSign = Math.sign(votesForThisCat);
-            let votePrefix = "";
-
-            if (voteSign > 0) {
-              votePrefix = "\u002B";
-            } else if (voteSign < 0) {
-              votePrefix = "\u2212";
-            }
-
             return (
               <Grid.Col key={id} span={{ base: 12, md: 6, xl: 3 }}>
                 <Card shadow="sm" padding="lg" radius="md" withBorder>
@@ -177,78 +40,12 @@ export function HomePage() {
                     <AspectRatio ratio={4 / 3} mx="auto">
                       <Image src={url}></Image>
                       <Overlay backgroundOpacity={0} opacity={1} zIndex={10}>
-                        <ActionIcon
-                          className={classes["favourite-button"]}
-                          pos="absolute"
-                          color={isCatFavourite ? "red" : "cyan"}
-                          variant="white"
-                          top={5}
-                          right={5}
-                          radius="xl"
-                          size="lg"
-                          aria-label={
-                            isCatFavourite
-                              ? "Remove from favourites"
-                              : "Add to favourites"
-                          }
-                          onClick={() => {
-                            if (isCatFavourite) {
-                              catUnFavourite.mutate(favourite.id);
-                            } else {
-                              catFavourite.mutate(id);
-                            }
-                          }}
-                        >
-                          {favouriteIcon}
-                        </ActionIcon>
+                        <FavouriteIcon catId={id} favourite={favourite} />
                       </Overlay>
                     </AspectRatio>
                   </Card.Section>
                   <Card.Section>
-                    <Group justify="space-between">
-                      <Group className={classes["cat-score"]} gap={0}>
-                        <ActionIcon
-                          variant="subtle"
-                          size="lg"
-                          radius={0}
-                          aria-label="Upvote"
-                          onClick={() => {
-                            upVote.mutate(id);
-                          }}
-                        >
-                          <IconArrowUp size={22}></IconArrowUp>
-                        </ActionIcon>
-
-                        <ActionIcon
-                          variant="subtle"
-                          size="lg"
-                          radius={0}
-                          aria-label="Downvote"
-                          onClick={() => {
-                            downVote.mutate(id);
-                          }}
-                        >
-                          <IconArrowDown size={22}></IconArrowDown>
-                        </ActionIcon>
-                        <Text ta="center">
-                          &nbsp;
-                          {votePrefix}
-                          {voteCount}
-                        </Text>
-                      </Group>
-                      <ActionIcon
-                        variant="subtle"
-                        color="red"
-                        size="lg"
-                        radius={0}
-                        aria-label="Delete"
-                        onClick={() => {
-                          catDelete.mutate(id);
-                        }}
-                      >
-                        <IconTrash></IconTrash>
-                      </ActionIcon>
-                    </Group>
+                    <Actions catId={id}></Actions>
                   </Card.Section>
                 </Card>
               </Grid.Col>
