@@ -35,7 +35,13 @@ export function HomePage() {
           {cats.data?.map(({ id, url, favourite }: CatObject) => {
             return (
               <Grid.Col key={id} span={{ base: 12, md: 6, xl: 3 }}>
-                <Card shadow="sm" padding="lg" radius="md" withBorder>
+                <Card
+                  data-testid="cat-card"
+                  shadow="sm"
+                  padding="lg"
+                  radius="md"
+                  withBorder
+                >
                   <Card.Section>
                     <AspectRatio ratio={4 / 3} mx="auto">
                       <Image src={url}></Image>

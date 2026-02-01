@@ -4,7 +4,13 @@
     "indentStyle": "space"
   },
   "files": {
-    "includes": ["**", "!**/*.css", "!!**/dist"]
+    "includes": [
+      "**",
+      "!**/*.css",
+      "!!**/dist",
+      "!**/playwright-report",
+      "!**/test-results"
+    ]
   },
   "assist": {
     "actions": {

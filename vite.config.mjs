@@ -8,5 +8,7 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './vitest.setup.mjs',
+    css: true,
+    exclude: ['**/node_modules/**', '**/e2e/**'],
   },
 });

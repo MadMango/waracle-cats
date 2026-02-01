@@ -1,0 +1,488 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Scaffold snapshot > matches snapshot 1`] = `
+<div>
+  <style
+    data-mantine-styles="true"
+  >
+    
+
+
+
+
+  </style>
+  <style
+    data-mantine-styles="classes"
+  >
+    @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
+  </style>
+  <style
+    data-mantine-styles="inline"
+  >
+    :root{--app-shell-navbar-width:calc(18.75rem * var(--mantine-scale));--app-shell-navbar-offset:calc(18.75rem * var(--mantine-scale));--app-shell-header-height:calc(3.75rem * var(--mantine-scale));--app-shell-header-offset:calc(3.75rem * var(--mantine-scale));--app-shell-footer-height:calc(2.5rem * var(--mantine-scale));--app-shell-footer-offset:calc(2.5rem * var(--mantine-scale));--app-shell-padding:var(--mantine-spacing-md);}@media(max-width: 47.99375em){:root{--app-shell-navbar-width:100%;--app-shell-navbar-offset:0px;--app-shell-navbar-transform:translateX(calc(var(--app-shell-navbar-width) * -1));--app-shell-navbar-transform-rtl:translateX(var(--app-shell-navbar-width));}}
+  </style>
+  <div
+    class="m_89ab340 mantine-AppShell-root"
+    data-mode="fixed"
+    data-resizing="true"
+    id="mantine-"
+    style="--app-shell-transition-duration: 200ms; --app-shell-transition-timing-function: ease;"
+  >
+    <header
+      class="m_3b16f56b mantine-AppShell-header right-scroll-bar-position"
+      data-with-border="true"
+      style="--app-shell-header-z-index: 100;"
+    >
+      <div
+        class="m_4081bf90 mantine-Group-root"
+        style="--group-gap: var(--mantine-spacing-md); --group-align: center; --group-justify: space-between; --group-wrap: nowrap; padding-inline: var(--mantine-spacing-md); height: 100%;"
+      >
+        <button
+          class="mantine-focus-auto m_fea6bf1a mantine-Burger-root m_87cf2631 mantine-UnstyledButton-root mantine-hidden-from-sm"
+          data-size="sm"
+          style="--burger-size: var(--burger-size-sm);"
+          type="button"
+        >
+          <div
+            class="m_d4fb9cad mantine-Burger-burger"
+            data-reduce-motion="true"
+          />
+        </button>
+        <p
+          class="mantine-focus-auto m_b6d8b162 mantine-Text-root"
+        >
+          Welcome to
+           
+          <span
+            class="mantine-focus-auto m_b6d8b162 mantine-Text-root"
+            data-inherit="true"
+            data-variant="gradient"
+            style="--text-gradient: linear-gradient(45deg, var(--mantine-color-indigo-filled) 0%, var(--mantine-color-cyan-filled) 100%);"
+          >
+            The Cat App
+          </span>
+        </p>
+        <div
+          class="m_8bffd616 mantine-Flex-root __m__-_r_8_ mantine-visible-from-sm"
+        >
+          <div
+            class="m_cf365364 mantine-SegmentedControl-root"
+            data-initialized="true"
+            data-with-items-borders="true"
+            role="radiogroup"
+            style="--sc-shadow: var(--mantine-shadow-xs);"
+          >
+            <span
+              class="m_9e182ccd mantine-SegmentedControl-indicator m_96b553a6 mantine-FloatingIndicator-root"
+              style="--transition-duration: var(--sc-transition-duration); transform: translateY(0px) translateX(0px); width: 0px; height: 0px;"
+            />
+            <div
+              class="m_69686b9b mantine-SegmentedControl-control"
+              data-active="true"
+            >
+              <input
+                checked=""
+                class="m_1714d588 mantine-SegmentedControl-input"
+                data-focus-ring="auto"
+                id="mantine--light"
+                name="mantine-"
+                type="radio"
+                value="light"
+              />
+              <label
+                class="m_1738fcb2 mantine-SegmentedControl-label"
+                data-active="true"
+                for="mantine--light"
+              >
+                <span
+                  class="m_78882f40 mantine-SegmentedControl-innerLabel"
+                >
+                  Light
+                </span>
+              </label>
+            </div>
+            <div
+              class="m_69686b9b mantine-SegmentedControl-control"
+            >
+              <input
+                class="m_1714d588 mantine-SegmentedControl-input"
+                data-focus-ring="auto"
+                id="mantine--dark"
+                name="mantine-"
+                type="radio"
+                value="dark"
+              />
+              <label
+                class="m_1738fcb2 mantine-SegmentedControl-label"
+                for="mantine--dark"
+              >
+                <span
+                  class="m_78882f40 mantine-SegmentedControl-innerLabel"
+                >
+                  Dark
+                </span>
+              </label>
+            </div>
+            <div
+              class="m_69686b9b mantine-SegmentedControl-control"
+            >
+              <input
+                class="m_1714d588 mantine-SegmentedControl-input"
+                data-focus-ring="auto"
+                id="mantine--auto"
+                name="mantine-"
+                type="radio"
+                value="auto"
+              />
+              <label
+                class="m_1738fcb2 mantine-SegmentedControl-label"
+                for="mantine--auto"
+              >
+                <span
+                  class="m_78882f40 mantine-SegmentedControl-innerLabel"
+                >
+                  Auto
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <nav
+      class="m_45252eee mantine-AppShell-navbar"
+      data-with-border="true"
+      style="--app-shell-navbar-z-index: calc(100 + 1);"
+    >
+      <div
+        class="m_8bffd616 mantine-Flex-root __m__-_r_j_ mantine-hidden-from-sm"
+        style="justify-content: flex-end; padding: calc(0.5rem * var(--mantine-scale));"
+      >
+        <div
+          class="m_cf365364 mantine-SegmentedControl-root"
+          data-initialized="true"
+          data-with-items-borders="true"
+          role="radiogroup"
+          style="--sc-shadow: var(--mantine-shadow-xs);"
+        >
+          <span
+            class="m_9e182ccd mantine-SegmentedControl-indicator m_96b553a6 mantine-FloatingIndicator-root"
+            style="--transition-duration: var(--sc-transition-duration); transform: translateY(0px) translateX(0px); width: 0px; height: 0px;"
+          />
+          <div
+            class="m_69686b9b mantine-SegmentedControl-control"
+            data-active="true"
+          >
+            <input
+              checked=""
+              class="m_1714d588 mantine-SegmentedControl-input"
+              data-focus-ring="auto"
+              id="mantine--light"
+              name="mantine-"
+              type="radio"
+              value="light"
+            />
+            <label
+              class="m_1738fcb2 mantine-SegmentedControl-label"
+              data-active="true"
+              for="mantine--light"
+            >
+              <span
+                class="m_78882f40 mantine-SegmentedControl-innerLabel"
+              >
+                Light
+              </span>
+            </label>
+          </div>
+          <div
+            class="m_69686b9b mantine-SegmentedControl-control"
+          >
+            <input
+              class="m_1714d588 mantine-SegmentedControl-input"
+              data-focus-ring="auto"
+              id="mantine--dark"
+              name="mantine-"
+              type="radio"
+              value="dark"
+            />
+            <label
+              class="m_1738fcb2 mantine-SegmentedControl-label"
+              for="mantine--dark"
+            >
+              <span
+                class="m_78882f40 mantine-SegmentedControl-innerLabel"
+              >
+                Dark
+              </span>
+            </label>
+          </div>
+          <div
+            class="m_69686b9b mantine-SegmentedControl-control"
+          >
+            <input
+              class="m_1714d588 mantine-SegmentedControl-input"
+              data-focus-ring="auto"
+              id="mantine--auto"
+              name="mantine-"
+              type="radio"
+              value="auto"
+            />
+            <label
+              class="m_1738fcb2 mantine-SegmentedControl-label"
+              for="mantine--auto"
+            >
+              <span
+                class="m_78882f40 mantine-SegmentedControl-innerLabel"
+              >
+                Auto
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <a
+        class="mantine-focus-auto m_f0824112 mantine-NavLink-root m_87cf2631 mantine-UnstyledButton-root"
+        data-active="true"
+        href="/"
+      >
+        <span
+          class="m_690090b5 mantine-NavLink-section"
+          data-position="left"
+        >
+          <div
+            class="m_7341320d mantine-ThemeIcon-root"
+            data-size="lg"
+            data-variant="gradient"
+            gradient="[object Object]"
+            radius="md"
+            style="--ti-size: var(--ti-size-lg); --ti-radius: var(--mantine-radius-md); --ti-bg: linear-gradient(45deg, var(--mantine-color-indigo-filled) 0%, var(--mantine-color-cyan-filled) 100%); --ti-color: var(--mantine-color-white); --ti-bd: none;"
+          >
+            <svg
+              class="tabler-icon tabler-icon-home "
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 12l-2 0l9 -9l9 9l-2 0"
+              />
+              <path
+                d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"
+              />
+              <path
+                d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"
+              />
+            </svg>
+          </div>
+        </span>
+        <div
+          class="m_f07af9d2 mantine-NavLink-body"
+        >
+          <span
+            class="m_1f6ac4c4 mantine-NavLink-label"
+          >
+            Home
+          </span>
+          <span
+            class="m_57492dcc mantine-NavLink-description"
+            data-active="true"
+          />
+        </div>
+      </a>
+      <a
+        class="mantine-focus-auto m_f0824112 mantine-NavLink-root m_87cf2631 mantine-UnstyledButton-root"
+        href="/upload"
+      >
+        <span
+          class="m_690090b5 mantine-NavLink-section"
+          data-position="left"
+        >
+          <div
+            class="m_7341320d mantine-ThemeIcon-root"
+            data-size="lg"
+            data-variant="gradient"
+            gradient="[object Object]"
+            radius="md"
+            style="--ti-size: var(--ti-size-lg); --ti-radius: var(--mantine-radius-md); --ti-bg: linear-gradient(45deg, var(--mantine-color-indigo-filled) 0%, var(--mantine-color-cyan-filled) 100%); --ti-color: var(--mantine-color-white); --ti-bd: none;"
+          >
+            <svg
+              class="tabler-icon tabler-icon-upload "
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"
+              />
+              <path
+                d="M7 9l5 -5l5 5"
+              />
+              <path
+                d="M12 4l0 12"
+              />
+            </svg>
+          </div>
+        </span>
+        <div
+          class="m_f07af9d2 mantine-NavLink-body"
+        >
+          <span
+            class="m_1f6ac4c4 mantine-NavLink-label"
+          >
+            Upload
+          </span>
+          <span
+            class="m_57492dcc mantine-NavLink-description"
+          />
+        </div>
+      </a>
+    </nav>
+    <main
+      class="m_8983817 mantine-AppShell-main"
+    >
+      <p>
+        test
+      </p>
+    </main>
+    <footer
+      class="m_3840c879 mantine-AppShell-footer right-scroll-bar-position"
+      data-with-border="true"
+      style="--app-shell-footer-z-index: 100;"
+    >
+      <div
+        class="m_8bffd616 mantine-Flex-root __m__-_r_1b_"
+        style="align-items: center; justify-content: space-between; min-height: calc(2.5rem * var(--mantine-scale)); max-height: calc(2.5rem * var(--mantine-scale));"
+      >
+        <p
+          class="mantine-focus-auto m_b6d8b162 mantine-Text-root"
+          data-truncate="end"
+          style="--text-fz: calc(0.875rem * var(--mantine-scale)); --text-lh: 14; margin-left: calc(1rem * var(--mantine-scale));"
+        >
+          <a
+            class="mantine-focus-auto m_849cf0da m_b6d8b162 mantine-Text-root mantine-Anchor-root"
+            data-underline="hover"
+            href="#"
+          >
+            Terms and conditions
+          </a>
+        </p>
+        <div
+          class="m_4081bf90 mantine-Group-root"
+          style="--group-gap: 0rem; --group-align: center; --group-justify: flex-end; --group-wrap: nowrap;"
+        >
+          <button
+            aria-label="Twitter"
+            class="mantine-focus-auto mantine-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
+            data-size="lg"
+            data-variant="subtle"
+            style="--ai-size: var(--ai-size-lg); --ai-bg: transparent; --ai-hover: var(--mantine-color-gray-light-hover); --ai-color: var(--mantine-color-gray-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+            type="button"
+          >
+            <span
+              class="m_8d3afb97 mantine-ActionIcon-icon"
+            >
+              <svg
+                class="tabler-icon tabler-icon-brand-twitter "
+                fill="none"
+                height="18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c0 -.249 1.51 -2.772 1.818 -4.013l0 .001"
+                />
+              </svg>
+            </span>
+          </button>
+          <a
+            aria-label="Open YouTube in a new tab"
+            class="mantine-focus-auto mantine-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
+            data-size="lg"
+            data-variant="subtle"
+            href="https://www.youtube.com/results?search_query=funny+cats"
+            style="--ai-size: var(--ai-size-lg); --ai-bg: transparent; --ai-hover: var(--mantine-color-gray-light-hover); --ai-color: var(--mantine-color-gray-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+            target="_blank"
+          >
+            <span
+              class="m_8d3afb97 mantine-ActionIcon-icon"
+            >
+              <svg
+                class="tabler-icon tabler-icon-brand-youtube "
+                fill="none"
+                height="18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8"
+                />
+                <path
+                  d="M10 9l5 3l-5 3l0 -6"
+                />
+              </svg>
+            </span>
+          </a>
+          <a
+            aria-label="Open Instagram in a new tab"
+            class="mantine-focus-auto mantine-active m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
+            data-size="lg"
+            data-variant="subtle"
+            href="https://www.instagram.com/cats_of_instagram/?hl=en"
+            style="--ai-size: var(--ai-size-lg); --ai-bg: transparent; --ai-hover: var(--mantine-color-gray-light-hover); --ai-color: var(--mantine-color-gray-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+            target="_blank"
+          >
+            <span
+              class="m_8d3afb97 mantine-ActionIcon-icon"
+            >
+              <svg
+                class="tabler-icon tabler-icon-brand-instagram "
+                fill="none"
+                height="18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4l0 -8"
+                />
+                <path
+                  d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"
+                />
+                <path
+                  d="M16.5 7.5v.01"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+`;

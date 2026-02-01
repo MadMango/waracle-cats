@@ -14,8 +14,12 @@
 
 - `typecheck` – checks TypeScript types
 - `lint` – runs biome and stylelint
-- `vitest` – runs vitest tests
-- `vitest:watch` – starts vitest watch
+- `test:unit` – runs vitest tests
+- `test:unit:watch` – starts vitest watch
+- `test:unit:ui` – starts vitest in ui mode
+- `test:e2e` - runs playwright tests
+- `test:e2e:ui` - runs playwright tests in ui mode
+- `test:e2e:headed`  - runs playwright tests in headed mode
 - `test` – runs `typecheck`, `lint`, `vitest`, and `build` scripts
 
 

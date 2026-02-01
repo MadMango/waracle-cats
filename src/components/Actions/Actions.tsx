@@ -84,6 +84,7 @@ export default function Actions({ catId }: ActionProps) {
     <Group justify="space-between">
       <Group className={classes["cat-score"]} gap={0}>
         <ActionIcon
+          data-testid="vote-up"
           variant="subtle"
           size="lg"
           radius={0}
@@ -96,6 +97,7 @@ export default function Actions({ catId }: ActionProps) {
         </ActionIcon>
 
         <ActionIcon
+          data-testid="vote-down"
           variant="subtle"
           size="lg"
           radius={0}
@@ -106,7 +108,7 @@ export default function Actions({ catId }: ActionProps) {
         >
           <IconArrowDown size={22}></IconArrowDown>
         </ActionIcon>
-        <Text ta="center">
+        <Text data-testid="vote-result" ta="center">
           &nbsp;
           {votePrefix}
           {voteCount}
