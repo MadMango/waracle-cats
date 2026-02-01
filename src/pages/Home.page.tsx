@@ -12,6 +12,7 @@ import FavouriteIcon from "@/components/FavouriteIcon/FavouriteIcon";
 import NoCats from "@/components/NoCats/NoCats";
 import Scaffold from "@/components/Scaffold/Scaffold";
 import { useCats } from "@/services/cats";
+import "./Home.module.css";
 
 type CatObject = {
   id: string;
